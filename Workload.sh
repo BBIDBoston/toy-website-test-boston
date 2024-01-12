@@ -19,7 +19,7 @@ az ad sp create --id $applicationRegistrationObjectId
 az role assignment create \
   --assignee $applicationRegistrationAppId \
   --role Contributor \
-  --scope $resourceGroupResourceId
+  --scope /$resourceGroupResourceId
 
 echo "AZURE_CLIENT_ID: $applicationRegistrationAppId"
 echo "AZURE_TENANT_ID: $(az account show --query tenantId --output tsv)"
